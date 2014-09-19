@@ -1,0 +1,94 @@
+/*Color de fondo de la pagina*/
+body{
+    background-color: #ffffff ;
+}
+
+/*Color del fondo del contenido de la pagina*/
+.contentAll{
+    background: #ffffff;
+}
+
+/*Cabecera de la pagina*/
+.cabecera{
+    background: #ffffff;
+}
+
+/*Logo de la empresa i sus dimensiones (recomendable que sea de las dimensiones indicadas abajo)*/
+.logo{    
+    width: 259px;
+    height: 107px;
+}
+
+/*Color de los pasos*/
+.stepG .number{
+    color: #ff6301;/*Color de los numeros*/
+}
+.stepG .step{
+    color: #00c928; /*Color de los Textos*/
+}
+
+/*Color general de todos los links de la pagina*/
+a{
+    color: #00c928;
+}
+
+/*Color de todos los titulos que aparecen al lado derecho de la pagina*/
+.scapeToDetails .colorSection{
+    color: #ff6301;
+}
+.scapeToDetails .secTextFondo p{
+    background: #ffffff; /*Color del fondo del texto*/
+}
+.scapeToDetails .seText{
+    color: #666666; /*Color del texto de descripcion*/
+}
+
+/*Color de fondo del CHECKOUT que aparece debajo del dropdown de idiomas*/
+.sect2{
+    background: #000066 ;
+}
+.sect2 p{
+    color: #ffffff ; /*Color del texto "CheckOut"*/
+}
+
+/*Para los formularios*/
+#conditionCheckTest{
+    color: #666666 ; /*Color de terminos y condiciones*/
+}
+.formulario{
+    color: #666666; /*Color de los campos de los formularios*/
+}
+.formulario .asterisk{
+    color: #fa6c14; /*Color del Asteristo que indica campo mandatorio*/
+}
+.partStep{
+    color: #666666; /*Color de las descripciones de los Steps 2 3 y 4*/
+}
+
+
+/*Color en degradado del boton Place Order*/
+.botPlaceOrder{
+    color: #ffffff ;
+    background: #ff6301;
+    background: -moz-linear-gradient(top, #fa6c14 40%, #ff6301 100%);  /*firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(40%,#fa6c14), color-stop(100%,#ff6301));  /* safari - chrone */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa6c14', endColorstr='#ff6301',GradientType=0 ); /* ie */
+}
+
+/*Color del footer*/
+.footer_prt2{
+    color: #666666; /*Color de los guiones*/
+}
+.footer_prt2 a{
+    color: #666666; /*Color de los links*/
+}
+
+/*Nuevos*/
+.infoLandText{
+    color: #000;
+}
+.imagCreditBusiness{
+    background-image: url(images/accredited_business.png);
+    width: 112px;
+    height: 42px;
+}
