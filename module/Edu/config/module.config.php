@@ -15,12 +15,12 @@ return array(
                 'options' => array(
                     'route' => '/',
                     'defaults' => array(
-                        'controller' => 'Checkout\Controller\Index',
+                        'controller' => 'Edu\Controller\Index',
                         'action' => 'index',
                     ),
                 ),
             ),
-            'RoutePending' => array(
+            /*'RoutePending' => array(
                 'type' => 'segment',
                 'options' => array(
                     'route' => '/:pay[/:alias]/pending[/:idPay][/:s][/]',
@@ -125,7 +125,7 @@ return array(
                         //'locale' => 'us',
                     ),
                 ),
-            ),
+            ),*/
            
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
@@ -181,6 +181,7 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Edu\Controller\Index' => 'Edu\Controller\IndexController',
+            'Edu\Controller\Chat' => 'Edu\Controller\ChatController',
         ),
     ),
     'view_manager' => array(
@@ -197,21 +198,5 @@ return array(
             __DIR__ . '/../view',
             __DIR__ . '/../../../public/static/partners',
         ),
-    ),
-    // Placeholder for console routes
-    'console' => array(
-        'router' => array(
-            'routes' => array(
-                'send_order_bbs' => array(
-                    'options' => array(
-                        'route'    => 'send_order_bbs',
-                        'defaults' => array(
-                            'controller' => 'Checkout\Controller\Connect',
-                            'action' => 'send-order'
-                        )
-                    )
-                )
-            )
-        )
     ),
 );

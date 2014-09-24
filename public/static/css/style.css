@@ -1,94 +1,37 @@
-/*Color de fondo de la pagina*/
-body{
-    background-color: #ffffff ;
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
 }
 
-/*Color del fondo del contenido de la pagina*/
-.contentAll{
-    background: #ffffff;
+.zf-green {
+    color: #68b604;
 }
 
-/*Cabecera de la pagina*/
-.cabecera{
-    background: #ffffff;
+.btn-success {
+  background-color: #57a900;
+  background-image: -moz-linear-gradient(top, #70d900, #57a900);
+  background-image: -ms-linear-gradient(top, #70d900, #57a900);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#70d900), to(#57a900));
+  background-image: -webkit-linear-gradient(top, #70d900, #57a900);
+  background-image: -o-linear-gradient(top, #70d900, #57a900);
+  background-image: linear-gradient(top, #70d900, #57a900);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70d900', endColorstr='#57a900', GradientType=0);
 }
 
-/*Logo de la empresa i sus dimensiones (recomendable que sea de las dimensiones indicadas abajo)*/
-.logo{    
-    width: 259px;
-    height: 107px;
+.btn-success:hover,
+.btn-success:active,
+.btn-success.active,
+.btn-success.disabled,
+.btn-success[disabled] {
+  background-color: #57a900;
 }
 
-/*Color de los pasos*/
-.stepG .number{
-    color: #ff6301;/*Color de los numeros*/
-}
-.stepG .step{
-    color: #00c928; /*Color de los Textos*/
+.btn-success:active, .btn-success.active {
+  background-color: #57a900;
 }
 
-/*Color general de todos los links de la pagina*/
-a{
-    color: #00c928;
-}
-
-/*Color de todos los titulos que aparecen al lado derecho de la pagina*/
-.scapeToDetails .colorSection{
-    color: #ff6301;
-}
-.scapeToDetails .secTextFondo p{
-    background: #ffffff; /*Color del fondo del texto*/
-}
-.scapeToDetails .seText{
-    color: #666666; /*Color del texto de descripcion*/
-}
-
-/*Color de fondo del CHECKOUT que aparece debajo del dropdown de idiomas*/
-.sect2{
-    background: #000066 ;
-}
-.sect2 p{
-    color: #ffffff ; /*Color del texto "CheckOut"*/
-}
-
-/*Para los formularios*/
-#conditionCheckTest{
-    color: #666666 ; /*Color de terminos y condiciones*/
-}
-.formulario{
-    color: #666666; /*Color de los campos de los formularios*/
-}
-.formulario .asterisk{
-    color: #fa6c14; /*Color del Asteristo que indica campo mandatorio*/
-}
-.partStep{
-    color: #666666; /*Color de las descripciones de los Steps 2 3 y 4*/
-}
-
-
-/*Color en degradado del boton Place Order*/
-.botPlaceOrder{
-    color: #ffffff ;
-    background: #ff6301;
-    background: -moz-linear-gradient(top, #fa6c14 40%, #ff6301 100%);  /*firefox */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(40%,#fa6c14), color-stop(100%,#ff6301));  /* safari - chrone */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa6c14', endColorstr='#ff6301',GradientType=0 ); /* ie */
-}
-
-/*Color del footer*/
-.footer_prt2{
-    color: #666666; /*Color de los guiones*/
-}
-.footer_prt2 a{
-    color: #666666; /*Color de los links*/
-}
-
-/*Nuevos*/
-.infoLandText{
-    color: #000;
-}
-.imagCreditBusiness{
-    background-image: url(images/accredited_business.png);
-    width: 112px;
-    height: 42px;
+div.container a.brand {
+    background: url("../img/zf2-logo.png") no-repeat scroll 0 10px transparent;
+    margin-left: 0;
+    padding: 8px 20px 12px 40px;
 }

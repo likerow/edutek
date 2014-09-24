@@ -12,9 +12,9 @@ namespace Edu;
 
 use Zend\Mvc\MvcEvent;
 use Zend\EventManager\EventInterface;
-use Bongo\Model;
+use Likerow\Model;
 use Zend\Mvc\ModuleRouteListener;
-use Checkout;
+use Edu;
 
 class Module {
 
@@ -75,9 +75,6 @@ class Module {
                 $service->logError('Dispatch ERROR: ' . $error, $services->get('Mail'));
             }
         });
-
-        $storage = $e->getApplication()->getServiceManager()->get('Likerow\Storage\DBStorage');
-        $storage->setSessionStorage('checkout');
     }
 
     public function getConfig() {
@@ -99,14 +96,7 @@ class Module {
 
     public function getServiceConfig() {
         $services = new \Likerow\ServiceManager\ServiceManagerConfig();
-        $services->setService(array(
-            'Checkout\Model\CheckoutDb' => function($sm) {
-        return new \Checkout\Model\CheckoutDb($sm->get('Zend\Db\Adapter\Adapter'), $sm);
-    }, 'Bongo\Model\BpOrder' => function($sm) {
-        $adapter = $sm->get('Zend\Db\Adapter\Adapter');
-        return new Model\BpOrder($adapter, $sm);
-    }));
-
+        $services->setService();
         return $services;
     }
 

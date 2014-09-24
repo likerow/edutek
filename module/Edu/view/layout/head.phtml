@@ -1,6 +1,6 @@
 <head>
     <meta charset="utf-8">
-    <?php echo $this->headTitle($this->translate('Bongo International'))->setSeparator(' - ')->setAutoEscape(false) ?>
+    <?php echo $this->headTitle($this->translate('PubliKademy'))->setSeparator(' - ')->setAutoEscape(false) ?>
     <?php
     echo $this->headMeta()
             ->appendName('viewport', 'width=device-width, initial-scale=1.0')
@@ -8,96 +8,22 @@
     ?>    
     <script>
         og = {};
-        og.getStatic = '<?php echo $this->server()->getStatic() ?>';
-        og.getContent = '<?php echo $this->server()->getContent() ?>';
-        og.idiomaSelect = '<?php echo $this->idiomaSelect ?>';
-        og.numeroClickSelectIdioma = 1;
-
     </script>
     <?php
-    echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->server()->getStatic() . 'static/images/favicon.ico?v=' .$this->server()->getScriptVersion() ))
-            ->prependStylesheet($this->server()->getStatic() . 'static/css/smoothness/jquery-ui-1.8.9.custom.css?v=' .$this->server()->getScriptVersion())
-            ->prependStylesheet($this->server()->getStatic() . 'static/css/jqueryAlerts/jquery.alerts.css?v=' .$this->server()->getScriptVersion())
-            ->prependStylesheet($this->server()->getStatic() . 'static/js/box/jquery.fancybox-1.3.4.css?v=' .$this->server()->getScriptVersion())
-            ->prependStylesheet($this->server()->getStatic() . 'static/locate/js/dd.css?v=' .$this->server()->getScriptVersion())
-            ->prependStylesheet($this->baseUrlPayPartner . 'css/style.css?v=' .$this->server()->getScriptVersion())
-            ->prependStylesheet($this->server()->getStatic() . 'static/css/contenido.css?v=' .$this->server()->getScriptVersion())
-            ->prependStylesheet($this->server()->getStatic() . 'static/locate/js/dd.css?v=' .$this->server()->getScriptVersion());
-    echo $this->headScript()
-            ->prependFile($this->server()->getStatic() . 'static/js/box/jquery.mousewheel-3.0.4.pack.js?v=' .$this->server()->getScriptVersion())
-            ->prependFile($this->server()->getStatic() . 'static/js/index.js?v=' .$this->server()->getScriptVersion())
-            ->prependFile($this->server()->getStatic() . 'static/js/base64_encode.js?v=' .$this->server()->getScriptVersion())
-            ->prependFile($this->server()->getStatic() . 'static/js/box/jquery.fancybox-1.3.4.pack.js?v=' .$this->server()->getScriptVersion())
-            ->prependFile($this->server()->getStatic() . 'static/js/box/jquery.mousewheel-3.0.4.pack.js?v=' .$this->server()->getScriptVersion())
-            ->prependFile($this->server()->getStatic() . 'static/js/dropDown.js?v=' .$this->server()->getScriptVersion())
-            ->prependFile($this->server()->getStatic() . 'static/js/comboScrollable.js?v=' .$this->server()->getScriptVersion())
-            ->prependFile($this->server()->getStatic() . 'static/js/jquery.alerts.js?v=' .$this->server()->getScriptVersion())
-            ->prependFile('https://s3bongous.s3.amazonaws.com/jsLib/1.9.0/jquery-ui.min.js?v=' .$this->server()->getScriptVersion())
-            ->prependFile('https://s3bongous.s3.amazonaws.com/jsLib/1.8.3/jquery.min.js?v=' .$this->server()->getScriptVersion());
+    echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+            ->prependStylesheet($this->server()->getStatic() . 'static/css/style.css')
+            ->prependStylesheet($this->server()->getStatic() . 'static/css/bootstrap-theme.min.css')
+            ->prependStylesheet($this->server()->getStatic() . 'static/css/bootstrap.min.css')
     ?>
-<script language="JavaScript" type="text/javascript">
-    var site = {
-        baseUrlPayPartner: "<?php echo $this->baseUrlPayPartner ?>",
-        baseUrlPayAliasPartner: "<?php echo $this->baseUrlPayAliasPartner ?>",
-        checkoutAlias: "<?php echo $this->checkoutAlias ?>",
-        sessionId: "<?php echo $this->sessionId ?>",
-        langugeCode: "<?php echo $this->languageCode ?>",
-        goBackLink: "<?php echo $this->goBackLink ?>",
-        baseUrlTransaction: "<?php echo $this->server()->getContent(); ?>",
-        partner: {
-            name: "BongoInternational"
-        },
-        existBillingAddress: '0'
-    };
-    var idpartnerAct = '<?php echo $this->partnerActiveAdyen ?>';
-    var intActivoCurr = 0;
-    var paisActivoCurr = '';
-    var currencyActual = 'USD';
-    var paisesSta = <?php echo json_encode($this->countries['states']) ?>;
-    var paisesStaShipping = <?php echo json_encode($this->countries['statesShipping']) ?>;
-    var countryPhoneCode = <?php echo json_encode($this->countries['countryPhones']) ?>;
 
-    var mm = '<?php echo $this->fechaActual ?>';
-    var ip_cliente = '<?php echo $this->ipClient ?>' // esta es la variable que se carga    
-    $(document).ready(function() {
-        $(".cabecera .logo").click(function() {
-            location.href = "<?php echo $this->logoLink ?>";
-        });
-        $(".cabecera .logo").css("cursor", "pointer");
-    })
-
-    var language = "<?php echo $this->lang ?>";
-    var tNoItemsInCar="<?php echo $this->translate('tNoItemsInCar') ?>";
-    var tPleTypeF="<?php echo $this->translate('tPleTypeF') ?>";
-    var tPleTypeL="<?php echo $this->translate('tPleTypeL') ?>";
-    var tAddress="<?php echo $this->translate('tAddress') ?>";
-    var tPleTyCity="<?php echo $this->translate('tPleTyCity') ?>";
-    var tPleSelectState="<?php echo $this->translate('tPleSelectState') ?>";
-    var tPleTypeC="<?php echo $this->translate('tPleTypeC') ?>";
-    var tPostalCode="<?php echo $this->translate('tPostalCode') ?>";
-    var tPleTyPhone="<?php echo $this->translate('tPleTyPhone') ?>";
-    var tPleTypeEM="<?php echo $this->translate('tPleTypeEM') ?>";
-    var tPleTypeCC="<?php echo $this->translate('tPleTypeCC') ?>";
-    var tPleTypeED1="<?php echo $this->translate('tPleTypeED1') ?>";
-    var tPleTypeED2="<?php echo $this->translate('tPleTypeED2') ?>";
-    var tPleSelectCred = "<?php echo $this->translate('tPleSelectCred') ?>";
-    var tPleaseCheck = "<?php echo $this->translate('tPleaseCheck') ?>";
-    var alertDone="<?php echo $this->translate('alertDone') ?>";
-    var dirImag="<?php echo $this->translate('dirImag') ?>";
-    var tBotPlaceOrder ="<?php echo $this->translate('tBotPlaceOrder') ?>";
-    var tNoItemsInCar="<?php echo $this->translate('tNoItemsInCar') ?>";
-    var tNContrySelectmensage="<?php echo $this->translate('tSelect') ?> <?php echo $this->translate('tCountry') ?>";
-    var tOrderSummary = "<?php echo $this->translate('tOrderSummary') ?>";
-    var tCalculating = '<?php echo str_replace('BASEPATH/', $this->server()->getStatic(),$this->translate('tCalculating')) ?>';
-    var tVeriPlease = '<?php echo str_replace('BASEPATH/', $this->server()->getStatic(),$this->translate('tVeriPlease')) ?>';
-    var tTitleAlerts = "";														
-</script>
+    <!-- Scripts -->
+    <?php
+    echo $this->headScript()
+            ->prependFile($this->server()->getStatic() . 'static/js/less/less-1.1.5.min.js')
+            ->prependFile($this->server()->getStatic() . 'static/js/bootstrap.min.js')
+            ->prependFile($this->server()->getStatic() . 'static/js/jquery.min.js')
+            ->prependFile($this->server()->getStatic() . 'static/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+            ->prependFile($this->server()->getStatic() . 'static/js/html5shiv.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+    ?>
 </head>
-<?php if (!$this->isCustomizable): ?>
-    <style>
-        .logo {
-            background-image: url(<?php echo $this->server()->getStatic() ?>static/images/logos/<?php echo $this->bongoPayLink ?>_logo.jpg);
-            background-repeat: no-repeat; 
-        }
-    </style>
-<?php endif; ?>
+

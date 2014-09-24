@@ -12,8 +12,8 @@
  * file.
  */
 return array(
-    'bongo_server' => array(
-        'proyecto' => 'BongoTool',
+    'likerow_server' => array(
+        'proyecto' => 'PublicKademy',
         'script_verion' => '1.0.0.1',
         'email_development' => array(
             'likerow@gmail.com'
@@ -22,7 +22,7 @@ return array(
             'sessionConfig' => array(
                 'cache_expire' => 86400,
                 'cookie_domain' => 'bongo1.com',
-                'name' => 'BONGOUS_SESSID_CHECKOUT',
+                'name' => 'PUBLIKADEMY',
                 'cookie_lifetime' => 190000,
                 'gc_maxlifetime' => 190000,
                 'cookie_path' => '/',
