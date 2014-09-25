@@ -10,7 +10,7 @@
 return array(
     'router' => array(
         'routes' => array(
-            'home' => array(
+             'home' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
                     'route' => '/',
@@ -20,123 +20,16 @@ return array(
                     ),
                 ),
             ),
-            /*'RoutePending' => array(
-                'type' => 'segment',
-                'options' => array(
-                    'route' => '/:pay[/:alias]/pending[/:idPay][/:s][/]',
-                    'constraints' => array(
-                        'alias' => '[a-zA-Z0-9_-]*',
-                        'idPay' => '[a-zA-Z0-9_-]*',
-                        's' => '[a-zA-Z0-9_-]*',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Checkout\Controller\Response',
-                        'action' => 'pending',
-                        //'locale' => 'us',
-                    ),
-                ),
-            ),
-            'RouteBlackList' => array(
-                'type' => 'segment',
-                'options' => array(
-                    'route' => '/:pay[/:alias]/blackList[/:idPay][/:s][/]',
-                    'constraints' => array(
-                        'alias' => '[a-zA-Z0-9_-]*',
-                        'idPay' => '[a-zA-Z0-9_-]*',
-                        's' => '[a-zA-Z0-9_-]*',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Checkout\Controller\Response',
-                        'action' => 'order-black-list',
-                        //'locale' => 'us',
-                    ),
-                ),
-            ),
-            'RouteOrderComplete' => array(
-                'type' => 'segment',
-                'options' => array(
-                    'route' => '/:pay[/:alias]/orderComplete[/:idPay][/:s][/]',
-                    'constraints' => array(
-                        'alias' => '[a-zA-Z0-9_-]*',
-                        'idPay' => '[a-zA-Z0-9_-]*',
-                        's' => '[a-zA-Z0-9_-]*',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Checkout\Controller\Response',
-                        'action' => 'order-complete',
-                        //'locale' => 'us',
-                    ),
-                ),
-            ),
-            
-            'RouteOrderFail' => array(
-                'type' => 'segment',
-                'options' => array(
-                    'route' => '/:pay[/:alias]/orderFail[/:idPay][/:s][/]',
-                    'constraints' => array(
-                        'alias' => '[a-zA-Z0-9_-]*',
-                        'idPay' => '[a-zA-Z0-9_-]*',
-                        's' => '[a-zA-Z0-9_-]*',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Checkout\Controller\Response',
-                        'action' => 'order-fail',
-                        //'locale' => 'us',
-                    ),
-                ),
-            ),
-            
-            'RouteRegexIndex' => array(
-                'type' => 'Zend\Mvc\Router\Http\Regex',
-                'options' => array(
-                    'regex' => '/pay/(.*)/index.php',
-                    'defaults' => array(
-                        'controller' => 'Checkout\Controller\Index',
-                        'action' => 'index',
-                        //'locale' => 'us',
-                    ),
-                    'spec' => '/pay/%alias%/%sessionid%',
-                ),
-            ),
-            'RouteRegexVerificard' => array(
-                'type' => 'Zend\Mvc\Router\Http\Regex',
-                'options' => array(
-                    'regex' => '/pay/(.*)/verifyCard.php',
-                    'defaults' => array(
-                        'controller' => 'Checkout\Controller\Response',
-                        'action' => 'verify-card',
-                        //'locale' => 'us',
-                    ),
-                    'spec' => '/pay/%alias%/%sessionids%',
-                ),
-            ),
-            'sessionLocale' => array(
-                'type' => 'segment',
-                'options' => array(
-                    'route' => '/:pay[/:alias][/:sessionid][/:locale][/]',
-                    'constraints' => array(
-                        'alias' => '[a-zA-Z0-9_-]*',
-                        'sessionid' => '[a-zA-Z0-9_-]*',
-                        'locale' => '[a-z]{2}(-[A-Z]{2}){0,1}',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Checkout\Controller\Index',
-                        'action' => 'index',
-                        //'locale' => 'us',
-                    ),
-                ),
-            ),*/
-           
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
             // using the path /application/:controller/:action
-            'checkout_route' => array(
+            'edu' => array(
                 'type' => 'Literal',
                 'options' => array(
-                    'route' => '/checkout',
+                    'route' => '/edu',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'Checkout\Controller',
+                        '__NAMESPACE__' => 'Edu\Controller',
                         'controller' => 'Index',
                         'action' => 'index',
                     ),
@@ -197,6 +90,9 @@ return array(
         'template_path_stack' => array(
             __DIR__ . '/../view',
             __DIR__ . '/../../../public/static/partners',
+        ),
+        'strategies' => array(
+            'ViewJsonStrategy',
         ),
     ),
 );
